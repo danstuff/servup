@@ -3,10 +3,7 @@
  - A phone, laptop, or any other client that has Google Chrome, Chromium, or Firefox installed. 
  - A linux server that has:
     - A display connected.
-    - A (preferably lightweight) desktop environment. For example, you can install xserver on an Ubuntu server via:
-```
-    sudo apt-get install xserver-xorg-video-all xserver-xorg-input-all xserver-xorg-core xinit x11-xserver-utils
-```
+    - A (preferably lightweight) desktop environment. For example, you can install xserver on an Ubuntu server via: `sudo apt-get install xserver-xorg-video-all xserver-xorg-input-all xserver-xorg-core xinit x11-xserver-utils`
     - Chromium.
     - NodeJS Version 19 or greater, with these NPM packages installed:
         - `express`
