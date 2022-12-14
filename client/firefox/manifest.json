@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Servup",
+    "version": "1.0",
+    "description": "Send a URL to a local server",
+    "permissions": 
+    [
+        "menus",
+        "activeTab",
+        "webRequest",
+        "storage"
+    ],
+    "background":
+    {
+        "scripts": ["servup_firefox_ctx.js"]
+    },
+    "browser_action":
+    {
+        "default_title": "Servup",
+        "default_popup": "servup_firefox.html"
+    }
+}

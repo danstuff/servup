@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Servup",
+    "version": "1.0",
+    "description": "Send a URL to a local server",
+    "permissions": 
+    [
+        "contextMenus",
+        "webRequest",
+        "storage"
+    ],
+    "background":
+    {
+        "service_worker": "servup_chrome_ctx.js"
+    },
+    "action":
+    {
+        "default_title": "Servup",
+        "default_popup": "servup_chrome.html"
+    }
+}

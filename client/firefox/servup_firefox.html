@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        div {
+            padding: 10px 5px;
+        }
+        h1 {
+            font-size: 16px;
+        }
+        label {
+            margin: 10px 5px;
+            font-size: 10px;
+        }
+    </style>
+    <script src="servup_firefox.js" type="module"></script>
+</head>
+<body>
+    <h1>Servup</h1>
+    <label for="server_ip_input">Local Server IP:</label>
+    <br>
+    <input id="server_ip_input"></input>
+    <br>
+    <label for="handshake_input">Handshake:</label>
+    <br>
+    <input id="handshake_input"></input>
+
+    <div>
+        <button id="skip_l_button">|&lt;</button> 
+        <button id="jog_l_button">&lt;&lt;</button> 
+        <button id="pause_button">| |</button> 
+        <button id="jog_r_button">&gt;&gt;</button> 
+        <button id="skip_r_button">&gt;|</button> 
+    </div>
+</body>
+</html>
