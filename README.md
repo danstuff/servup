@@ -11,9 +11,9 @@
         - `forever`
 ## Setup
  1. Clone this repository to the server. 
- 2. Run `start_server.sh`.
+ 2. Run `start_server.sh`. Enter a handshake phrase to sync with clients.
  3. On the client, install the servup extension in your browser. You can either install it from this repository or from your browser's web store (coming soon):
     - [Chrome/Chromium]()
     - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/servup/)
- 4. Enter the local IP address of your server into the servup extension.
+ 4. Enter the local IP address of your server into the servup extension, as well as the same handshake you entered before.
  5. Enjoy! Right clicking on a link in the client's browser and selecting "Cast to Servup Server" should allow you to immediately open it on the display connected to the server.
