@@ -27,6 +27,7 @@ function handle_post(loc, callback) {
             res.statusCode = 403;
             res.setHeader('Content-Type', 'text/plain');
             res.send('Access Denied');
+            console.log("POST denied");
         }
     });
 }
