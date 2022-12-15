@@ -3,21 +3,10 @@ const { exec } = require('child_process');
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const readline = require("readline");
-
 const app = express();
 const port = 3000;
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-var handshake = "";
-
-rl.question("Enter a handshake phrase to authorize clients: ", (hand_str) => {
-    handshake = hand_str;
-});
+var handshake = process.argv[2]
 
 var jsonParser = bodyParser.text()
 

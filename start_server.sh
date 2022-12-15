@@ -2,5 +2,8 @@
 
 echo Starting Servup Server...
 
+echo Enter a secret handshake: 
+read handshake
+
 cd server
-forever start servup_server.js
+forever start servup_node.js $handshake
