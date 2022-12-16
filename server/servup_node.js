@@ -36,6 +36,7 @@ function handle_post(loc, callback) {
 handle_post("/servup/play", (url) => {
     console.log("Serving Up " + url);
     exec("./scripts/play.sh \"" + url + "\"");
+    exec("./scripts/keypress.sh F");
 });
 
 handle_post("/servup/pause", (url) => {
