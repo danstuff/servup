@@ -31,6 +31,6 @@ browser.menus.onClicked.addListener(
 
 browser.menus.create({
     id: "1234",
-    title: "Cast to TV",
+    title: "Cast to Servup Server",
     contexts: ['all']
 });

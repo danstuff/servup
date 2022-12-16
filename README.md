@@ -1,4 +1,6 @@
-# Servup - Open-source media casting software
+# Servup - open-source media casting software
+A lightweight Node.JS app and browser extension setup that allows you to right-click and send a web video to a local linux server. Works best with YouTube.
+
 ## Requirements
  - A client that has Google Chrome, Chromium, or Firefox installed. 
  - A linux server that has:
@@ -11,6 +13,6 @@
  1. Clone this repository to the server. 
  2. Run `sudo setup_server.sh` to install the reuqired npm packages.
  2. Run `start_server.sh`. Enter a handshake phrase to sync with clients.
- 3. On the client, install the servup extension in your browser. You can either install it from this repository or from the [Firefox Addons Store](https://addons.mozilla.org/en-US/firefox/addon/servup/)
- 4. Enter the local IP address of your server into the servup extension, as well as the same handshake you entered before.
+ 3. On the client, install the servup extension in your browser. You can either install it from this repository or from the [Firefox Addons Store](https://addons.mozilla.org/en-US/firefox/addon/servup/). Coming soon: On Android, download the app from the Google Play Store, which adds an option to the share menu.
+ 4. Enter the local IP address of your server into the servup extension/app, as well as the handshake you entered before.
  5. Enjoy! Right clicking on a link in the client's browser and selecting "Cast to Servup Server" should allow you to immediately open it on the display connected to the server.

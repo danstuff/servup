@@ -31,6 +31,6 @@ chrome.contextMenus.onClicked.addListener(
 
 chrome.contextMenus.create({
     id: "1234",
-    title: "Cast to TV",
+    title: "Cast to Servup Server",
     contexts: ['all']
 });
