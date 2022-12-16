@@ -6,18 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            font-family: sans-serif;
+            color: white;
+            background-color: dimgray;
+        }
         div {
             padding: 10px 5px;
+        }
+        h1 {
+            font-size: 16px;
+        }
+        label {
+            margin: 10px 5px;
+            font-size: 10px;
         }
     </style>
     <script src="servup_chrome.js" type="module"></script>
 </head>
 <body>
-    <h2>Servup</h2>
-    
+    <h1>Servup</h1>
+
     <label for="server_ip_input">Local Server IP:</label>
+    <br>
     <input id="server_ip_input"></input>
+    <br>
     <label for="handshake_input">Handshake:</label>
+    <br>
     <input id="handshake_input"></input>
 
     <div>

@@ -4,7 +4,7 @@ function serverPost(instruction_str, url_str)
     {
         chrome.storage.local.get(["handshake"]).then((resultb) =>
         {
-            fetch("http://" + resulta.server_ip + ":3000/" + instruction_str,
+            fetch("http://" + resulta.server_ip + ":3000/servup/" + instruction_str,
             {
                 method: "POST",
                 headers:
@@ -25,7 +25,7 @@ function serverPost(instruction_str, url_str)
 chrome.contextMenus.onClicked.addListener(
     (info, tab) =>
     {
-        serverPost("servup", info.linkUrl);
+        serverPost("play", info.linkUrl);
     }
 );
 

@@ -24,17 +24,18 @@ function handle_post(loc, callback) {
         }
         else
         {
+            console.log("POST denied");
+
             res.statusCode = 403;
             res.setHeader('Content-Type', 'text/plain');
             res.send('Access Denied');
-            console.log("POST denied");
         }
     });
 }
 
 handle_post("/servup/play", (url) => {
-    console.log("Serving Up " + body.url);
-    exec("./scripts/play.sh \"" + body.url + "\"");
+    console.log("Serving Up " + url);
+    exec("./scripts/play.sh \"" + url + "\"");
 });
 
 handle_post("/servup/pause", (url) => {

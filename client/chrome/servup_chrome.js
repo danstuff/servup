@@ -4,7 +4,7 @@ function serverPost(instruction_str, url_str)
     {
         chrome.storage.local.get(["handshake"]).then((resultb) =>
         {
-            fetch("http://" + resulta.server_ip + ":3000/" + instruction_str,
+            fetch("http://" + resulta.server_ip + ":3000/servup/" + instruction_str,
             {
                 method: "POST",
                 headers:
@@ -24,22 +24,22 @@ function serverPost(instruction_str, url_str)
 
 document.getElementById("skip_l_button").onclick = () =>
 {
-    serverPost("skip_left", null);
+    serverPost("previous", null);
 }
 
 document.getElementById("skip_r_button").onclick = () =>
 {
-    serverPost("skip_right", null);
+    serverPost("next", null);
 }
 
 document.getElementById("jog_l_button").onclick = () =>
 {
-    serverPost("jog_left", null);
+    serverPost("back", null);
 }
 
 document.getElementById("jog_r_button").onclick = () =>
 {
-    serverPost("jog_right", null);
+    serverPost("forward", null);
 }
 
 document.getElementById("pause_button").onclick = () =>
