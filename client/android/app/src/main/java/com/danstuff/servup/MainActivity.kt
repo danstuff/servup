@@ -98,7 +98,7 @@ class MainActivity : AppCompatActivity() {
     private fun doCommand(command: String, url: String?) {
         loadData()
         Executors.newSingleThreadExecutor().execute {
-            requestPOST("http://$serverIp:3000/servup/$command/?handshake=$handshake&media=$url")
+            requestPOST("http://$serverIp:3000/servup/$command/$handshake/$url")
         }
     }
 
