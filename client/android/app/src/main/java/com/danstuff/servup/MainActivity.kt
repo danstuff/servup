@@ -98,14 +98,11 @@ class MainActivity : AppCompatActivity() {
     private fun doCommand(command: String, url: String?) {
         loadData()
         Executors.newSingleThreadExecutor().execute {
-            val jsonObject = JSONObject()
-            jsonObject.put("url", url)
-            jsonObject.put("handshake", handshake)
-            requestPOST("http://$serverIp:3000/servup/$command/?handshake=$handshake&media=$url", jsonObject)
+            requestPOST("http://$serverIp:3000/servup/$command/?handshake=$handshake&media=$url")
         }
     }
 
-    private fun requestPOST(r_url: String?, postDataParams: JSONObject): String? {
+    private fun requestPOST(r_url: String?): String? {
         val url = URL(r_url)
         val conn: HttpURLConnection = url.openConnection() as HttpURLConnection
         conn.readTimeout = 3000
@@ -132,21 +129,5 @@ class MainActivity : AppCompatActivity() {
             return sb.toString()
         }
         return null
-    }
-
-    @Throws(IOException::class)
-    private fun encodeParams(params: JSONObject): String {
-        val result = StringBuilder()
-        var first = true
-        val itr = params.keys()
-        while (itr.hasNext()) {
-            val key = itr.next()
-            val value = params[key]
-            if (first) first = false else result.append("&")
-            result.append(URLEncoder.encode(key, "UTF-8"))
-            result.append("=")
-            result.append(URLEncoder.encode(value.toString(), "UTF-8"))
-        }
-        return result.toString()
     }
 }

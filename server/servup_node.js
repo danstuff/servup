@@ -33,9 +33,10 @@ function handle_post(loc, callback) {
 
 handle_post("play", (url) => {
     console.log("Serving Up " + url);
+    setTimeout(() => {
+        exec("./scripts/keypress.sh F");
+    }, 3000);
     exec("./scripts/play.sh \"" + url + "\"");
-    sleep(2000);
-    exec("./scripts/keypress.sh F");
 });
 
 handle_post("pause", (url) => {
