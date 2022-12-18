@@ -42,19 +42,19 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<FloatingActionButton>(R.id.buttonPrev).setOnClickListener {
-            doCommand("previous", "")
+            doCommand("previous", "null")
         }
 
         findViewById<FloatingActionButton>(R.id.buttonRew).setOnClickListener {
-            doCommand("back", "")
+            doCommand("back", "null")
         }
 
         findViewById<FloatingActionButton>(R.id.buttonPause).setOnClickListener {
-            doCommand("pause", "")
+            doCommand("pause", "null")
         }
 
         findViewById<FloatingActionButton>(R.id.buttonFF).setOnClickListener {
-            doCommand("forward", "")
+            doCommand("forward", "null")
         }
 
         findViewById<FloatingActionButton>(R.id.buttonNext).setOnClickListener {
@@ -98,7 +98,8 @@ class MainActivity : AppCompatActivity() {
     private fun doCommand(command: String, url: String?) {
         loadData()
         Executors.newSingleThreadExecutor().execute {
-            requestPOST("http://$serverIp:3000/servup/$command/$handshake/$url")
+            val urlEnc = URLEncoder.encode(url, "utf-8")
+            requestPOST("http://$serverIp:3000/servup/$command/$handshake/$urlEnc")
         }
     }
 
