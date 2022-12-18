@@ -4,19 +4,12 @@ function serverPost(instruction_str, url_str)
     {
         chrome.storage.local.get(["handshake"]).then((resultb) =>
         {
-            fetch("http://" + resulta.server_ip + ":3000/servup/" + instruction_str,
+            fetch("http://" + resulta.server_ip + ":3000/servup/" + instruction_str +
+                "?handshake=" + resultb.handshake +
+                "&media=" + encodeURIComponent(url_str),
             {
                 method: "POST",
-                headers:
-                {
-                    'Content-Type': 'application/json'
-                },
-                mode: "no-cors",
-                body: JSON.stringify(
-                {
-                    handshake: resultb.handshake,
-                    url: url_str
-                })
+                mode: "no-cors"
             });
         });
     });

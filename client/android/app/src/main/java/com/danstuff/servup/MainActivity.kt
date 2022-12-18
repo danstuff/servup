@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity() {
             val jsonObject = JSONObject()
             jsonObject.put("url", url)
             jsonObject.put("handshake", handshake)
-            requestPOST("http://$serverIp:3000/servup/$command", jsonObject)
+            requestPOST("http://$serverIp:3000/servup/$command/?handshake=$handshake&media=$url", jsonObject)
         }
     }
 
@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity() {
         conn.doOutput = true
         val os: OutputStream = conn.outputStream
         val writer = BufferedWriter(OutputStreamWriter(os, "UTF-8"))
-        writer.write(postDataParams.toString())
+        writer.write("")
         writer.flush()
         writer.close()
         os.close()
