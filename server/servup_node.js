@@ -2,6 +2,7 @@ const { exec } = require('child_process');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 
 const app = express();
 const port = 3000;
@@ -9,6 +10,8 @@ const port = 3000;
 var handshake = process.argv[2]
 
 var jsonParser = bodyParser.text()
+
+app.use(morgan('combined'))
 
 function handle_post(loc, callback) {
     app.post(loc, jsonParser, (req, res) => {
@@ -36,6 +39,7 @@ function handle_post(loc, callback) {
 handle_post("/servup/play", (url) => {
     console.log("Serving Up " + url);
     exec("./scripts/play.sh \"" + url + "\"");
+    await sleep(2000);
     exec("./scripts/keypress.sh F");
 });
 
