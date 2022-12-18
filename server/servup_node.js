@@ -11,7 +11,7 @@ var handshake = process.argv[2]
 app.use(morgan('combined'))
 
 function handle_post(loc, callback) {
-    app.post("/servup/"+loc+":handshake/:media", (req, res) => {
+    app.post("/servup/"+loc+"/:handshake/:media", (req, res) => {
         if (req.params.handshake == handshake)
         {
             callback(req.params.media);
