@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity() {
         conn.doOutput = true
         val os: OutputStream = conn.outputStream
         val writer = BufferedWriter(OutputStreamWriter(os, "UTF-8"))
-        writer.write(encodeParams(postDataParams))
+        writer.write(postDataParams.toString())
         writer.flush()
         writer.close()
         os.close()

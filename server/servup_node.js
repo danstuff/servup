@@ -15,6 +15,7 @@ app.use(morgan('combined'))
 
 function handle_post(loc, callback) {
     app.post(loc, jsonParser, (req, res) => {
+        console.log(req, req.body)
         let body = JSON.parse(req.body);
 
         if (body.handshake == handshake)
