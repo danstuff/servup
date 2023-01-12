@@ -35,7 +35,7 @@ handle_post("play", (url) => {
     console.log("Serving Up " + url);
     setTimeout(() => {
         exec("./scripts/keypress.sh F");
-    }, 3000);
+    }, 6000);
     exec("./scripts/play.sh \"" + url + "\"");
 });
 
